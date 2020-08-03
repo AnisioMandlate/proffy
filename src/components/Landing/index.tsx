@@ -5,6 +5,7 @@ import landing from "../../assets/images/landing.svg";
 import studyIcon from "../../assets/images/icons/study.svg";
 import giveClassesIcon from "../../assets/images/icons/give-classes.svg";
 import purpleHeartIcon from "../../assets/images/icons/purple-heart.svg";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -17,14 +18,14 @@ const Landing = () => {
 
         <img src={landing} alt="Plataforma de estudos" className="hero-image" />
         <div className="buttons-container">
-          <a href="#" className="study">
+          <Link to="/study" className="study">
             <img src={studyIcon} alt="Study" />
             Estudar
-          </a>
-          <a href="#" className="study">
+          </Link>
+          <Link to="/give-classes" className="give-classes">
             <img src={giveClassesIcon} alt="Give Classes" />
             Dar aulas
-          </a>
+          </Link>
         </div>
         <span className="total-connections">
           Total de 200 conexões já realizadas{" "}
