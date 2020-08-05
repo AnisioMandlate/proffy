@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import PageHeader from "../PageHeader";
+import TeacherItem from "../TeacherItem";
 
 const TeacherList = () => {
   return (
@@ -22,14 +23,10 @@ const TeacherList = () => {
         </form>
       </PageHeader>
       <main>
-        <article className="teacher-item">
-          <header>
-            <img
-              src="https://avatars2.githubusercontent.com/u/4643304?s=400&u=e9c051805fc50658102e4ee25b632b67c85ced3b&v=4"
-              alt="Teacher Profile Pic (Anisio Mandlate)"
-            />
-          </header>
-        </article>
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
       </main>
     </div>
   );
