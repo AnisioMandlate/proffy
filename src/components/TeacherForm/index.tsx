@@ -3,6 +3,7 @@ import "./styles.css";
 import PageHeader from "../PageHeader";
 import Input from "../Input";
 import warnigIcon from "../../assets/images/icons/warning.svg";
+import Textarea from "../TextArea";
 
 const TeacherForm = () => {
   return (
@@ -18,6 +19,7 @@ formulário de inscrição."
           <Input name="name" label="Nome Completo" />
           <Input name="avatar" label="Avatar" />
           <Input name="whatsapp" label="WhatsApp" />
+          <Textarea name="bio" label="Biografia" />
         </fieldset>
         <fieldset>
           <legend>Sobre a aula</legend>
