@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.css";
 import PageHeader from "../PageHeader";
+import Input from "../Input";
+import warnigIcon from "../../assets/images/icons/warning.svg";
 
 const TeacherForm = () => {
   return (
@@ -13,19 +15,23 @@ formulário de inscrição."
       <main>
         <fieldset>
           <legend>Seus dados</legend>
-          <div className="input-block">
-            <label htmlFor="name">Nome Completo</label>
-            <input type="text" id="name" />
-          </div>
-          <div className="input-block">
-            <label htmlFor="avatar">Avatar</label>
-            <input type="text" id="avatar" />
-          </div>
-          <div className="input-block">
-            <label htmlFor="whatsapp">WhatsApp</label>
-            <input type="text" id="whatsapp" />
-          </div>
+          <Input name="name" label="Nome Completo" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="whatsapp" label="WhatsApp" />
         </fieldset>
+        <fieldset>
+          <legend>Sobre a aula</legend>
+          <Input name="subject" label="Matéria" />
+          <Input name="cost" label="Custo da aula por hora" />
+        </fieldset>
+        <footer>
+          <p>
+            <img src={warnigIcon} alt="Aviso Importante" />
+            Importante! <br />
+            Preencha todos os dados
+          </p>
+          <button type="button">Salvar cadastro</button>
+        </footer>
       </main>
     </div>
   );
