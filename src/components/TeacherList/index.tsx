@@ -4,14 +4,23 @@ import PageHeader from "../PageHeader";
 import TeacherItem from "../TeacherItem";
 import Input from "../Input";
 import Select from "../Select";
+import api from "../../services";
 
 const TeacherList = () => {
   const [subject, setSubject] = useState("");
   const [week_day, setWeekDay] = useState("");
   const [time, setTime] = useState("");
 
-  function searchTeachers(e: FormEvent) {
+  async function searchTeachers(e: FormEvent) {
     e.preventDefault();
+    const response = await api.get("classes", {
+      params: {
+        subject,
+        week_day,
+        time,
+      },
+    });
+    console.log(response.data);
   }
 
   return (
@@ -54,6 +63,7 @@ const TeacherList = () => {
           <Input
             name="time"
             label="Hora"
+            type="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
           />

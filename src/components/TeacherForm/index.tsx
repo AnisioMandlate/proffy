@@ -112,6 +112,10 @@ formulário de inscrição."
                 { value: "Matemática", label: "Matemática" },
                 { value: "Português", label: "Português" },
                 { value: "Química", label: "Química" },
+                {
+                  value: "TIC",
+                  label: "Tecnologias de Informação e Comunicação",
+                },
               ]}
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
