@@ -1,12 +1,13 @@
 import React, { useState, FormEvent } from "react";
 import "./styles.css";
 import PageHeader from "../PageHeader";
-import TeacherItem from "../TeacherItem";
+import TeacherItem, { Teacher } from "../TeacherItem";
 import Input from "../Input";
 import Select from "../Select";
 import api from "../../services";
 
 const TeacherList = () => {
+  const [teachers, setTeachers] = useState([]);
   const [subject, setSubject] = useState("");
   const [week_day, setWeekDay] = useState("");
   const [time, setTime] = useState("");
@@ -20,7 +21,7 @@ const TeacherList = () => {
         time,
       },
     });
-    console.log(response.data);
+    setTeachers(response.data);
   }
 
   return (
@@ -43,6 +44,10 @@ const TeacherList = () => {
               { value: "Matemática", label: "Matemática" },
               { value: "Português", label: "Português" },
               { value: "Química", label: "Química" },
+              {
+                value: "TIC",
+                label: "Tecnologias de Informação e Comunicação",
+              },
             ]}
           />
           <Select
@@ -71,10 +76,10 @@ const TeacherList = () => {
         </form>
       </PageHeader>
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher: Teacher) => {
+          return <TeacherItem key={teacher.id} teacher={teacher} />;
+        })}
+        ;
       </main>
     </div>
   );
