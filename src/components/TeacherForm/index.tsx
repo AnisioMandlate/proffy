@@ -6,8 +6,10 @@ import warnigIcon from "../../assets/images/icons/warning.svg";
 import Textarea from "../TextArea";
 import Select from "../Select";
 import api from "../../services";
+import { useHistory } from "react-router-dom";
 
 const TeacherForm = () => {
+  const history = useHistory();
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -50,6 +52,7 @@ const TeacherForm = () => {
       })
       .then(() => {
         alert("Cadastro realizado com sucesso!");
+        history.push("/");
       })
       .catch(() => {
         alert("Ocorreu um erro no cadastro!");
