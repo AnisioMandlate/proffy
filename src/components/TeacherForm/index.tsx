@@ -21,6 +21,20 @@ const TeacherForm = () => {
     setScheduleItems([...scheduleItems, { week_day: 0, from: "", to: "" }]);
   }
 
+  function setScheduleItemValue(
+    position: number,
+    field: string,
+    value: string
+  ) {
+    const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+      if (index === position) {
+        return { ...scheduleItem, [field]: value };
+      }
+      return scheduleItem;
+    });
+    setScheduleItems(updatedScheduleItems);
+  }
+
   function handleSubmitClass(event: FormEvent) {
     event.preventDefault();
   }
@@ -66,8 +80,6 @@ formulário de inscrição."
             <Select
               name="subject"
               label="Matéria"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
               options={[
                 { value: "Artes", label: "Artes" },
                 { value: "Historia", label: "Historia" },
@@ -80,6 +92,8 @@ formulário de inscrição."
                 { value: "Frances", label: "Frances" },
                 { value: "Geografia", label: "Geografia" },
               ]}
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
             />
             <Input
               name="cost"
@@ -95,12 +109,16 @@ formulário de inscrição."
                 + Novo horário
               </button>
             </legend>
-            {scheduleItems.map((scheduleItem) => {
+            {scheduleItems.map((scheduleItem, index) => {
               return (
                 <div key={scheduleItem.week_day} className="schedule-item">
                   <Select
                     name="week_day"
                     label="Dia da semana"
+                    value={scheduleItem.week_day}
+                    onChange={(e) =>
+                      setScheduleItemValue(index, "week_day", e.target.value)
+                    }
                     options={[
                       { value: "0", label: "Domingo" },
                       { value: "1", label: "Segunda-feira" },
@@ -111,8 +129,24 @@ formulário de inscrição."
                       { value: "6", label: "Sábado" },
                     ]}
                   />
-                  <Input name="from" label="Das" type="time" />
-                  <Input name="to" label="Até" type="time" />
+                  <Input
+                    name="from"
+                    label="Das"
+                    type="time"
+                    value={scheduleItem.from}
+                    onChange={(e) =>
+                      setScheduleItemValue(index, "from", e.target.value)
+                    }
+                  />
+                  <Input
+                    name="to"
+                    label="Até"
+                    type="time"
+                    value={scheduleItem.to}
+                    onChange={(e) =>
+                      setScheduleItemValue(index, "to", e.target.value)
+                    }
+                  />
                 </div>
               );
             })}
