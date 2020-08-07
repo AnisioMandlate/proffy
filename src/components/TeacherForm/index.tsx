@@ -4,6 +4,7 @@ import PageHeader from "../PageHeader";
 import Input from "../Input";
 import warnigIcon from "../../assets/images/icons/warning.svg";
 import Textarea from "../TextArea";
+import Select from "../Select";
 
 const TeacherForm = () => {
   return (
@@ -23,7 +24,22 @@ formulário de inscrição."
         </fieldset>
         <fieldset>
           <legend>Sobre a aula</legend>
-          <Input name="subject" label="Matéria" />
+          <Select
+            name="subject"
+            label="Matéria"
+            options={[
+              { value: "Artes", label: "Artes" },
+              { value: "Historia", label: "Historia" },
+              { value: "Matematica", label: "Matematica" },
+              { value: "Desenho", label: "Desenho" },
+              { value: "Filosofia", label: "Filosofia" },
+              { value: "Fisica", label: "Fisica" },
+              { value: "Ingles", label: "Ingles" },
+              { value: "Portugues", label: "Portugues" },
+              { value: "Frances", label: "Frances" },
+              { value: "Geografia", label: "Geografia" },
+            ]}
+          />
           <Input name="cost" label="Custo da aula por hora" />
         </fieldset>
         <footer>
