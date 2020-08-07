@@ -50,6 +50,9 @@ const TeacherForm = () => {
       })
       .then(() => {
         alert("Cadastro realizado com sucesso!");
+      })
+      .catch(() => {
+        alert("Ocorreu um erro no cadastro!");
       });
   }
 
