@@ -99,16 +99,16 @@ formulário de inscrição."
               name="subject"
               label="Matéria"
               options={[
-                { value: "Artes", label: "Artes" },
-                { value: "Historia", label: "Historia" },
-                { value: "Matematica", label: "Matematica" },
                 { value: "Desenho", label: "Desenho" },
                 { value: "Filosofia", label: "Filosofia" },
-                { value: "Fisica", label: "Fisica" },
-                { value: "Ingles", label: "Ingles" },
-                { value: "Portugues", label: "Portugues" },
-                { value: "Frances", label: "Frances" },
+                { value: "Física", label: "Física" },
+                { value: "Francês", label: "Francês" },
                 { value: "Geografia", label: "Geografia" },
+                { value: "História", label: "História" },
+                { value: "Inglês", label: "Inglês" },
+                { value: "Matemática", label: "Matemática" },
+                { value: "Português", label: "Português" },
+                { value: "Química", label: "Química" },
               ]}
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
