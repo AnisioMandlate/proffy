@@ -5,6 +5,7 @@ import Input from "../Input";
 import warnigIcon from "../../assets/images/icons/warning.svg";
 import Textarea from "../TextArea";
 import Select from "../Select";
+import api from "../../services";
 
 const TeacherForm = () => {
   const [name, setName] = useState("");
@@ -37,6 +38,19 @@ const TeacherForm = () => {
 
   function handleSubmitClass(event: FormEvent) {
     event.preventDefault();
+    api
+      .post("classes", {
+        name,
+        avatar,
+        whatsapp,
+        bio,
+        subject,
+        cost: Number(cost),
+        schedule: scheduleItems,
+      })
+      .then(() => {
+        alert("Cadastro realizado com sucesso!");
+      });
   }
 
   return (
@@ -60,6 +74,7 @@ formulário de inscrição."
               name="avatar"
               label="Avatar"
               value={avatar}
+              placeholder="https://www.example.com"
               onChange={(e) => setAvatar(e.target.value)}
             />
             <Input
