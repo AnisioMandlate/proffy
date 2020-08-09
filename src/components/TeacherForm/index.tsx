@@ -87,6 +87,7 @@ formulário de inscrição."
               name="whatsapp"
               label="WhatsApp"
               value={whatsapp}
+              placeholder="+(123) 123456789"
               onChange={(e) => setWhatsapp(e.target.value)}
             />
             <Textarea
