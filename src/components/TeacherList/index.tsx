@@ -5,6 +5,7 @@ import TeacherItem, { Teacher } from "../TeacherItem";
 import Input from "../Input";
 import Select from "../Select";
 import api from "../../services";
+import smileIcon from "../../assets/images/icons/smile.svg";
 
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);
@@ -26,7 +27,11 @@ const TeacherList = () => {
 
   return (
     <div id="page-teacher-list" className="container">
-      <PageHeader title="Estes são os proffys disponíveis">
+      <PageHeader
+        title="Estes são os proffys disponíveis"
+        img={smileIcon}
+        text={`Nós temos ${teachers.length} professores disponíveis nessa disciplina.`}
+      >
         <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
             name="subject"
