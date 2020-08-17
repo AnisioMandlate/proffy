@@ -1,0 +1,19 @@
+#sucess {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-primary);
+  color: var(--color-text-in-primary);
+}
+
+#sucess button {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  width: 170px;
+  color: var(--color-button-text);
+  background: var(--color-secundary);
+}
