@@ -51,8 +51,7 @@ const TeacherForm = () => {
         schedule: scheduleItems,
       })
       .then(() => {
-        alert("Cadastro realizado com sucesso!");
-        history.push("/");
+        history.push("/saved");
       })
       .catch(() => {
         alert("Ocorreu um erro no cadastro!");
