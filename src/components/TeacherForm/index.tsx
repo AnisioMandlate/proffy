@@ -7,6 +7,7 @@ import Textarea from "../TextArea";
 import Select from "../Select";
 import api from "../../services";
 import { useHistory } from "react-router-dom";
+import rocketIcon from "../../assets/images/icons/rocket.svg";
 
 const TeacherForm = () => {
   const history = useHistory();
@@ -64,6 +65,9 @@ const TeacherForm = () => {
         title="Que incrível que você quer dar aulas."
         description="O primeiro passo, é preencher esse
 formulário de inscrição."
+        img={rocketIcon}
+        text="Preparare-se!
+Vai ser o máximo."
       />
       <main>
         <form onSubmit={handleSubmitClass}>
