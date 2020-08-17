@@ -1,13 +1,29 @@
 #sucess {
+  padding: 20px;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color: var(--color-primary);
   color: var(--color-text-in-primary);
   background-image: url("../../assets/images/success-background.svg");
+}
+
+#sucess img {
+  margin-bottom: 2rem;
+}
+
+#sucess h1 {
+  color: var(--color-button-text);
+  font-size: 5rem;
+}
+
+#sucess p {
+  line-height: 35px;
+  margin-bottom: 5rem;
 }
 
 #sucess button {
