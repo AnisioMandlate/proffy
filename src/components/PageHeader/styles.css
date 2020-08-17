@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
 }
+
 .page-header .header-content .total > img {
   margin-right: 1rem;
 }
@@ -85,10 +86,12 @@
 
   .page-header .header-content .title-group {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
   .page-header .header-content .title {
-    max-width: 350px;
+    max-width: 450px;
+    margin-right: 10rem;
   }
 }
