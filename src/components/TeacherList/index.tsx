@@ -30,7 +30,11 @@ const TeacherList = () => {
       <PageHeader
         title="Estes são os proffys disponíveis"
         img={smileIcon}
-        text={`Nós temos ${teachers.length} professores disponíveis nessa disciplina.`}
+        text={
+          teachers.length !== 0
+            ? `Nós temos ${teachers.length} professores disponíveis nessa disciplina.`
+            : `Preencha os campos abaixo para visualizar o número de professores disponíveis.`
+        }
       >
         <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
@@ -81,9 +85,13 @@ const TeacherList = () => {
         </form>
       </PageHeader>
       <main>
-        {teachers.map((teacher: Teacher) => {
-          return <TeacherItem key={teacher.id} teacher={teacher} />;
-        })}
+        {teachers.length !== 0 ? (
+          teachers.map((teacher: Teacher) => {
+            return <TeacherItem key={teacher.id} teacher={teacher} />;
+          })
+        ) : (
+          <p>Nenhum professor encontrado com sua pesquisa.</p>
+        )}
       </main>
     </div>
   );
