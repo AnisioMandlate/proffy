@@ -5,8 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   color: var(--color-text-in-primary);
+  background-image: url("../../assets/images/success-background.svg");
 }
 
 #sucess button {
