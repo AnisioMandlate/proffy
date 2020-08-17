@@ -76,20 +76,27 @@ formulário de inscrição."
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <Input
-              name="avatar"
-              label="Avatar"
-              value={avatar}
-              placeholder="https://www.example.com"
-              onChange={(e) => setAvatar(e.target.value)}
-            />
-            <Input
-              name="whatsapp"
-              label="WhatsApp"
-              value={whatsapp}
-              placeholder="+(123) 123456789"
-              onChange={(e) => setWhatsapp(e.target.value)}
-            />
+            <div className="field-group">
+              <div className="field">
+                <Input
+                  name="avatar"
+                  label="Avatar"
+                  value={avatar}
+                  placeholder="https://www.example.com"
+                  onChange={(e) => setAvatar(e.target.value)}
+                />
+              </div>
+              <div className="field">
+                <Input
+                  name="whatsapp"
+                  label="WhatsApp"
+                  value={whatsapp}
+                  placeholder="( ) _ _ _ _ _ _ _ _ _"
+                  onChange={(e) => setWhatsapp(e.target.value)}
+                />
+              </div>
+            </div>
+
             <Textarea
               name="bio"
               label="Biografia"
