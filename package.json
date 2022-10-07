@@ -11,18 +11,21 @@
     "@types/react": "^16.14.15",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.3.0",
-    "axios": "^0.21.2",
+    "axios": "^0.21.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.9.10"
+    "react-scripts": "5.0.0",
+    "typescript": "~3.9.10",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +41,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }
